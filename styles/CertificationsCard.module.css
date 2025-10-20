@@ -1,0 +1,82 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background: var(--article-bg);
+  border-radius: 14px;
+  overflow: hidden;
+  text-decoration: none;
+  color: white;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-color);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.container:hover .image {
+  transform: scale(1.08);
+}
+
+.badge {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.content {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.issueDate {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.viewMore {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  border: 1px solid currentColor;
+  padding: 6px 12px;
+  border-radius: 20px;
+  width: fit-content;
+  transition: all 0.3s ease;
+}
+
+.container:hover .viewMore {
+  background: var(--accent-color);
+  color: var(--bg-color);
+}

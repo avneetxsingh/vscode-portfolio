@@ -91,7 +91,7 @@ export default function HomePage() {
           </div>
 
           <p className={styles.bio}>
-            // Still debugging life… but the code runs fine.
+            {'// Still debugging life… but the code runs fine.'}
           </p>
 
           <div className={styles.actionLinks}>

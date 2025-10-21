@@ -1,11 +1,8 @@
-// pages/github.tsx
 import Image from 'next/image';
 import GitHubCalendar from 'react-github-calendar';
 import { VscRepo, VscPerson } from 'react-icons/vsc';
-
 import RepoCard from '@/components/RepoCard';
 import { Repo, User } from '@/types';
-
 import styles from '@/styles/GithubPage.module.css';
 
 interface GithubPageProps {
@@ -24,7 +21,6 @@ const GithubPage = ({ repos, user }: GithubPageProps) => {
           various projects and skills.
         </p>
       </div>
-
       <div className={styles.githubPage}>
         {/* Profile Section */}
         <div className={styles.profileSection}>
@@ -52,7 +48,6 @@ const GithubPage = ({ repos, user }: GithubPageProps) => {
             </div>
           </div>
         </div>
-
         {/* Popular Repos */}
         <div className={styles.sectionHeader}>
           <h3 className={styles.sectionTitle}>Popular Repositories</h3>
@@ -62,7 +57,6 @@ const GithubPage = ({ repos, user }: GithubPageProps) => {
             <RepoCard key={repo.id} repo={repo} />
           ))}
         </div>
-
         {/* Contribution Graph */}
         <div className={styles.contributions}>
           <GitHubCalendar
@@ -83,15 +77,23 @@ const GithubPage = ({ repos, user }: GithubPageProps) => {
 };
 
 export async function getStaticProps() {
-  const headers = process.env.GITHUB_TOKEN
-    ? { Authorization: `token ${process.env.GITHUB_TOKEN}` }
-    : {};
+  const headers: Record<string, string> = {};
+  if (process.env.GITHUB_TOKEN) {
+    headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  }
 
   // Fetch user profile
   const userRes = await fetch(
     `https://api.github.com/users/avneetxsingh`,
     { headers }
   );
+  if (!userRes.ok) {
+    console.error(`Failed to fetch user: ${userRes.statusText}`);
+    return {
+      props: { title: 'GitHub', repos: [], user: {} },
+      revalidate: 600,
+    };
+  }
   const user = await userRes.json();
 
   // Fetch repos (latest pushed, max 6)
@@ -99,6 +101,13 @@ export async function getStaticProps() {
     `https://api.github.com/users/avneetxsingh/repos?sort=pushed&per_page=6`,
     { headers }
   );
+  if (!repoRes.ok) {
+    console.error(`Failed to fetch repos: ${repoRes.statusText}`);
+    return {
+      props: { title: 'GitHub', repos: [], user },
+      revalidate: 600,
+    };
+  }
   const repos = await repoRes.json();
 
   return {

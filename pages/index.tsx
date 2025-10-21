@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { VscArrowRight } from 'react-icons/vsc';
-
 import styles from '@/styles/HomePage.module.css';
 
 export default function HomePage() {
@@ -99,9 +98,9 @@ export default function HomePage() {
               href="/AvneetSinghResume.pdf" 
               download="AvneetSinghResume.pdf" 
               className={styles.primaryLink}
-      >
-  Download Resume <VscArrowRight />
-</a>
+            >
+              Download Resume <VscArrowRight />
+            </a>
           </div>
         </div>
       </div>

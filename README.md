@@ -1,7 +1,7 @@
 # 🌐 **Avneet Singh — Developer Portfolio**
 
 <p align="center">
-  <img src="public/preview.png" width="85%" alt="Portfolio Preview" />
+  <img src="/portfolio_homepage.png'" width="85%" alt="Portfolio Preview" />
 </p>
 
 <p align="center">

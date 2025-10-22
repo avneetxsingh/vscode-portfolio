@@ -22,7 +22,7 @@ const CustomHead = ({ title }: CustomHeadProps) => {
         property="og:description"
         content="//Still debugging life… but the code runs fine."
       />
-      <meta property="og:image" content= '/portfolio_homepage.png'/>
+      <meta property="og:image" content= 'public/portfolio_homepage.png'/>
       <meta property="og:url" content="https://vscode-portfolio.vercel.app" />
       <meta name="twitter:card" content="summary_large_image" />
     </Head>

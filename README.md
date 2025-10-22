@@ -1,49 +1,160 @@
-# vscode-portfolio
-[![Open is Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/itsnitinr/vscode-portfolio)
+Avneet Singh's Portfolio
+Welcome to my personal portfolio website, showcasing my projects, GitHub repositories, and technical skills as a Computer Science & Engineering student at the University of Toledo. This site is built with Next.js and deployed on Vercel, featuring a modern, interactive design to highlight my work and contributions.
+Features
 
-A Visual Studio Code themed developer portfolio website built with Next.js and deployed on Vercel.
+Home Page: Displays a code-like animation introducing my name, role, and a downloadable resume.
+Projects Page: Showcases a curated list of projects with images, descriptions, and links to live demos or repositories.
+GitHub Page: Integrates with the GitHub API to display my public repositories, user profile, and contribution graph using react-github-calendar.
+Responsive Design: Optimized for both desktop and mobile devices with a clean, modern UI.
+Static Site Generation: Uses Next.js's getStaticProps with Incremental Static Regeneration (ISR) for fast performance and dynamic data updates.
 
-![vscode-portfolio banner](https://imgur.com/JXJ9mpO.gif)
+Tech Stack
 
-## Features Roadmap
+Framework: Next.js (v15.5.3)
+Language: TypeScript
+Styling: CSS Modules
+Icons: React Icons
+GitHub Integration: GitHub API for fetching user and repository data
+Calendar: react-github-calendar for contribution graph
+Image Optimization: Next.js Image component
+Deployment: Vercel
+Linting: ESLint with react/jsx-no-comment-textnodes rule enforced
+Environment Variables: Managed via .env.local and Vercel dashboard
 
-- [ ] Themes and customizations
-  - [x] GitHub Dark (default)
-  - [ ] One Dark Pro
-  - [x] Dracula
-  - [x] Ayu
-  - [x] Nord
-- [ ] Interactive custom terminal
+Prerequisites
+Before setting up the project, ensure you have the following installed:
 
-For other features and themes suggestions, please open an issue.
+Node.js (v16 or higher)
+npm or yarn
+A GitHub Personal Access Token for API access
 
-## Environment Variables
+Installation
 
-For fetching your articles from dev.to, create an `.env.local` file inside the project directory. Check the `.env.local.example` file for more information.
+Clone the repository:
+git clone https://github.com/avneetxsingh/portfolio.git
+cd portfolio
 
-## Running Development Server
 
-```bash
+Install dependencies:
+npm install
+
+
+Set up environment variables:Create a .env.local file in the project root and add your GitHub Personal Access Token:
+GITHUB_TOKEN=ghp_yourPersonalAccessTokenHere
+
+
+Generate a token from GitHub Settings > Developer settings > Personal access tokens.
+Required scopes: public_repo, user.
+
+
+Add image assets:
+
+Place project images (e.g., project1.jpg, project2.jpg) in the public/images/ directory.
+Ensure paths in src/data/projects.ts match the file names.
+
+
+Run the development server:
 npm run dev
-# or
-yarn dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 to view the site.
 
-All VSCode related components can be found in the `components` folder. To change the content of the portfolio, check out the `pages` folder. To add or remove pages, modify `components/Sidebar.jsx` and `components/Tabsbar.jsx`.
+Build for production:
+npm run build
+npm start
 
-## Next.js Resources
 
-To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Project Structure
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/)
+pages/:
+index.tsx: Home page with animated code display and resume download.
+github.tsx: Displays GitHub profile, repositories, and contribution graph.
+ProjectsPage.tsx: Lists portfolio projects with cards.
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+components/:
+ProjectCard.tsx: Renders individual project cards with images and links.
+RepoCard.tsx: Renders GitHub repository cards with stats (stars, forks, language).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+data/:
+projects.ts: Static data for projects (title, description, image, link, slug).
+
+
+types/:
+types.ts: TypeScript interfaces for Project, Repo, User, and Article.
+
+
+styles/:
+CSS Modules for each page/component (e.g., HomePage.module.css, ProjectCard.module.css).
+
+
+public/:
+Static assets like images and resume (AvneetSinghResume.pdf).
+
+
+
+Environment Variables
+
+GITHUB_TOKEN: GitHub Personal Access Token for API requests.
+Local: Set in .env.local.
+Vercel: Add to Vercel dashboard under Settings > Environment Variables.
+Without a token, GitHub API requests are rate-limited (60 requests/hour).
+
+
+
+Deployment
+The project is deployed on Vercel for fast, scalable hosting.
+
+Push to GitHub:Ensure your repository is pushed to GitHub:
+git push origin main
+
+
+Set up Vercel:
+
+Create a Vercel account and link your GitHub repository.
+Import the repository in Vercel and configure the project.
+Add GITHUB_TOKEN in Vercel’s Environment Variables settings.
+
+
+Deploy:Vercel automatically builds and deploys on each push to the main branch. Check build logs for errors.
+
+
+API Integration
+
+GitHub API: Fetches user profile and repositories in github.tsx using getStaticProps.
+Endpoint: https://api.github.com/users/avneetxsingh (user profile).
+Endpoint: https://api.github.com/users/avneetxsingh/repos?sort=pushed&per_page=6 (latest 6 repositories).
+Uses Incremental Static Regeneration (ISR) with revalidate: 600 (10 minutes).
+
+
+
+Troubleshooting
+
+Build errors:
+TypeScript errors: Ensure types in types.ts match API responses and component usage.
+ESLint react/jsx-no-comment-textnodes: Wrap JSX comments in {/* */} or disable the rule in .eslintrc.
+API errors: Verify GITHUB_TOKEN is set and has correct scopes. Check GitHub API rate limits.
+
+
+Image issues: Ensure image paths in projects.ts match files in public/images/.
+Run npm run build locally to catch errors before deploying.
+
+Contributing
+Contributions are welcome! To contribute:
+
+Fork the repository.
+Create a feature branch (git checkout -b feature/your-feature).
+Commit changes (git commit -m "Add your feature").
+Push to the branch (git push origin feature/your-feature).
+Open a pull request.
+
+Project Inspiration:
+Project template from Nitin
+
+Contact
+
+Name: Avneet Singh
+GitHub: avneetxsingh
+Email: info.avneetsingh@gmail.com
+

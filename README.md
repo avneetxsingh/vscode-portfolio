@@ -1,161 +1,169 @@
-Absolutely 💪 — here’s a professional, elegant, and developer-friendly README.md for your portfolio project, formatted for GitHub.
-
-It includes visuals, structure, setup instructions, customization guidance, and a professional tone.
-
-⸻
-
-🧠 Avneet Singh — Developer Portfolio
-
-🚀 Overview
-
-Welcome to my developer portfolio — a VSCode-themed, interactive portfolio built with Next.js, TypeScript, and CSS Modules.
-It showcases my projects, experience, publications, certifications, and GitHub activity, all designed in a sleek, developer-centric layout.
+# 🌐 **Avneet Singh — Developer Portfolio**
 
 <p align="center">
-  <img src="public/preview.png" width="80%" alt="Portfolio Preview" />
+  <img src="public/preview.png" width="85%" alt="Portfolio Preview" />
+</p>
+
+<p align="center">
+  <b>💻 Built with Next.js · TypeScript · CSS Modules · VSCode-inspired theme</b>
 </p>
 
 
+## 🧭 Overview
 
-⸻
-
-✨ Features
-
-Section	Description
-🏠 Home	Landing page with dynamic VSCode-style code animation and resume download
-💼 Work	Detailed career timeline with collapsible experience cards
-📚 Publications	Research publications with journal, citation, and DOI details
-💻 Projects	Showcases major personal and professional projects with previews
-🧾 Certifications	Achievements from Coursera, AWS, and more with certificate links
-🐙 GitHub	Live integration showing repositories and contribution heatmap
-👨‍🎓 About	Short summary of education, goals, and background
+Welcome to my **developer portfolio** — an interactive, VSCode-themed experience built with **Next.js**.  
+It showcases my **projects**, **experience**, **publications**, **certifications**, and **GitHub activity**,  
+designed to reflect both my personality and my craft as a developer 🚀.
 
 
-⸻
+## ✨ Highlights
 
-🧩 Tech Stack
-	•	Framework: Next.js 14
-	•	Language: TypeScript
-	•	Styling: CSS Modules + Variables
-	•	UI Icons: React Icons
-	•	Deployment: Vercel
-	•	Data Integration:
-	•	GitHub API for repositories and contributions
-	•	ORCID / Research Data for publications
-	•	Design Theme: Visual Studio Code inspired (dark mode)
+| 🚀 Feature | 🔍 Description |
+|------------|----------------|
+| 🏠 **Home** | Animated VSCode-style intro with resume download |
+| 💼 **Work** | Professional timeline with interactive, expandable job cards |
+| 📚 **Publications** | Academic works with journal, citation, and DOI details |
+| 💻 **Projects** | Showcases personal + research projects with realistic previews |
+| 🧾 **Certifications** | Verified badges and credentials from Coursera and more |
+| 🐙 **GitHub** | Live API integration showing repositories + contribution heatmap |
 
-⸻
 
-⚙️ Installation
+## 🧱 Tech Stack
 
-# Clone the repository
+<p align="center">
+  <img src="https://skillicons.dev/icons?i=nextjs,typescript,react,css,vercel,git,github" alt="Tech Stack Icons" />
+</p>
+
+- ⚡ **Framework:** Next.js 14  
+- 🎨 **Styling:** CSS Modules + custom VSCode-inspired variables  
+- 🧩 **Language:** TypeScript  
+- 🧠 **Integrations:** GitHub API, ORCID, and static JSON data  
+- ☁️ **Deployment:** Vercel  
+
+
+## ⚙️ Getting Started
+
+```bash
+# 1️⃣ Clone the repository
 git clone https://github.com/avneetxsingh/portfolio.git
 
-# Enter the folder
+# 2️⃣ Navigate to folder
 cd portfolio
 
-# Install dependencies
+# 3️⃣ Install dependencies
 npm install
 
-# Start development server
+# 4️⃣ Run locally
 npm run dev
 
-Then open http://localhost:3000 in your browser.
+Then open → http://localhost:3000
 
-⸻
 
-🧱 Project Structure
+🌍 Environment Setup
 
-📁 src
-├── components/
+Create a .env.local file at the project root:
+
+NEXT_PUBLIC_GITHUB_USERNAME=avneetxsingh
+
+(Additional API keys can be added if using ResearchGate / ORCID integrations.)
+
+
+🧩 Project Structure
+
+src/
+├── components/             # Reusable UI components
 │   ├── WorkCard.tsx
 │   ├── PublicationsCard.tsx
 │   ├── CertificationCard.tsx
 │   └── RepoCard.tsx
 │
-├── pages/
-│   ├── index.tsx             # Home page
-│   ├── work.tsx              # Career / Experience page
-│   ├── projects.tsx          # Project showcase
-│   ├── publications.tsx      # Publications from Research / ORCID
-│   ├── certifications.tsx    # Certifications page
-│   └── github.tsx            # GitHub API integration
+├── pages/                  # Main pages
+│   ├── index.tsx           # Home
+│   ├── work.tsx            # Work experience
+│   ├── projects.tsx        # Projects showcase
+│   ├── publications.tsx    # Research publications
+│   ├── certifications.tsx  # Certifications
+│   └── github.tsx          # GitHub API section
 │
-├── styles/
+├── styles/                 # Scoped CSS modules
 │   ├── HomePage.module.css
 │   ├── WorkCard.module.css
-│   ├── PublicationsCard.module.css
+│   ├── PublicationsPage.module.css
 │   ├── CertificationCard.module.css
-│   ├── CertificationsPage.module.css
-│   └── ...
+│   └── CertificationsPage.module.css
 │
 └── public/
-    ├── images/
-    │   ├── projects/
-    │   ├── certifications/
-    │   └── publications/
-    ├── logos/
+    ├── images/             # Assets (project & publication images)
+    ├── logos/              # SVG/PNG logos
     └── AvneetSinghResume.pdf
 
 
-⸻
+🧠 Customization
 
-🌐 Environment Variables
-
-Create a .env.local file at the root of your project with:
-
-NEXT_PUBLIC_GITHUB_USERNAME=avneetxsingh
-
-(You can add more API keys if using ResearchGate or ORCID integrations.)
-
-⸻
-
-📸 Customization
-
-Feature	How to Edit
-🧑‍💼 Work Experience	pages/work.tsx → update the workData array
-💻 Projects	data/projects.ts → update title, description, image, and link
-📚 Publications	pages/publications.tsx → add your publications manually or via ORCID
-🎓 Certifications	pages/certifications.tsx → update certifications array
-🏠 Resume	Replace /public/AvneetSinghResume.pdf with your own
-🎨 Theme Colors	Edit CSS variables in globals.css or page-specific modules
+✨ Area	⚙️ File / Folder
+👨‍💻 Work Experience	pages/work.tsx
+💻 Projects	data/projects.ts
+📚 Publications	pages/publications.tsx
+🧾 Certifications	pages/certifications.tsx
+🏠 Home Page / Resume	pages/index.tsx
+🎨 Theme Colors	globals.css or page-specific modules
 
 
-⸻
+🖼️ Example Sections
 
-🚀 Deployment
+💼 Work Experience
 
-Deploy easily with Vercel:
+<p align="center">
+  <img src="public/screens/work-preview.png" width="85%" alt="Work Page Preview" />
+</p>
+
+
+📚 Publications
+
+<p align="center">
+  <img src="public/screens/publications-preview.png" width="85%" alt="Publications Preview" />
+</p>
+
+
+💻 Projects
+
+<p align="center">
+  <img src="public/screens/projects-preview.png" width="85%" alt="Projects Preview" />
+</p>
+
+
+🌐 Deployment
+
+You can deploy directly using Vercel — it’s built for Next.js apps.
 
 npm run build
 npm run start
 
-Or connect your GitHub repo directly at vercel.com.
+Or connect your GitHub repository to Vercel.com.
 
-⸻
-
-🧠 Author
+👨‍🎓 About the Developer
 
 Avneet Singh
-🎓 University of Toledo | Student Developer
-💻 Passionate about software engineering, AI, and system design.
-🌐 Portfolio Website
-🐙 GitHub
-🔗 LinkedIn
+🎓 MS in Computer Science — University of Toledo
+💻 Passionate about AI, full-stack development, and clean architecture.
+⚡ Currently exploring FastAPI, LangChain, and AI system design.
 
-⸻
+<p align="center">
+  <a href="https://github.com/avneetxsingh"><img src="https://img.shields.io/badge/GitHub-AvneetSingh-181717?style=for-the-badge&logo=github" /></a>
+  <a href="https://linkedin.com/in/avneetxsingh"><img src="https://img.shields.io/badge/LinkedIn-AvneetSingh-0A66C2?style=for-the-badge&logo=linkedin" /></a>
+  <a href="mailto:avneetxsingh@gmail.com"><img src="https://img.shields.io/badge/Email-Contact_Me-EA4335?style=for-the-badge&logo=gmail" /></a>
+</p>
 
-📜 License
+🪪 License
 
-This project is licensed under the MIT License — feel free to use and modify it with attribution.
-
-⸻
+This project is open-sourced under the MIT License.
+Feel free to clone, modify, and use it for your own portfolio — just add attribution. ❤️
 
 💬 Acknowledgements
 	•	Next.js
 	•	Vercel
 	•	React Icons
-	•	GitHub Calendar
+	•	GitHub Calendar API
 
 Project Template Inspiration:
 https://nitinranganath.com
